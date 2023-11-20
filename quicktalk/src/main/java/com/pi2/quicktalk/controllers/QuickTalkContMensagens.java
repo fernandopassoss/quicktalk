@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi2.quicktalk.models.QuickTalkMensagens;
-import com.pi2.quicktalk.models.QuickTalkUsuarios;
 import com.pi2.quicktalk.repositories.QuickTalkRepMensagens;
 
 @RestController
@@ -24,12 +23,12 @@ public class QuickTalkContMensagens {
     @Autowired
     private QuickTalkRepMensagens quickTalkRepMensagens;
 
-    @GetMapping("/get")
+    @GetMapping
     Iterable<QuickTalkMensagens> getMensagens(){
         return quickTalkRepMensagens.findAll();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<QuickTalkMensagens> getMensagemID(@PathVariable int id) {
         Long longID = Long.valueOf(id);
         QuickTalkMensagens result = quickTalkRepMensagens.getReferenceById(longID);
@@ -40,7 +39,7 @@ public class QuickTalkContMensagens {
         }
     }
     
-    @PostMapping("/post")
+    @PostMapping
     QuickTalkMensagens novaMensagem(@RequestBody QuickTalkMensagens mensagem) {
         QuickTalkMensagens novaMensagem = quickTalkRepMensagens.save(mensagem);
         return novaMensagem;

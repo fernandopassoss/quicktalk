@@ -25,25 +25,25 @@ public class QuickTalkContUsuario {
     @Autowired
     private QuickTalkRepUsuario quickTalkRepUsuario;
 
-    @GetMapping("/get")
+    @GetMapping
     Iterable<QuickTalkUsuarios> getUsuarios() {
         return quickTalkRepUsuario.findAll();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     QuickTalkUsuarios getUsuarioByID(@PathVariable int id) {
         Long longID = Long.valueOf(id);
         Optional<QuickTalkUsuarios> result = quickTalkRepUsuario.findById(longID);
         return !result.isPresent() ? null : result.get();
     }
 
-    @PostMapping("/post")
+    @PostMapping
     QuickTalkUsuarios novoUsuario(@RequestBody QuickTalkUsuarios usuario) {
         QuickTalkUsuarios novoUsuario = quickTalkRepUsuario.save(usuario);
         return novoUsuario;
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/{id}")
     QuickTalkUsuarios deleteUsuarioByID(@PathVariable int id) {
         Long longID = Long.valueOf(id);
         quickTalkRepUsuario.deleteById(longID);
@@ -51,7 +51,7 @@ public class QuickTalkContUsuario {
         return !result.isPresent() ? null : result.get();
     }
 
-    @PutMapping("/put/{id}")
+    @PutMapping("/{id}")
     QuickTalkUsuarios alteraUsuario(@RequestBody QuickTalkUsuarios usuario, @PathVariable int id) {
         Long longID = Long.valueOf(id);
         if (quickTalkRepUsuario.existsById(longID)) {
