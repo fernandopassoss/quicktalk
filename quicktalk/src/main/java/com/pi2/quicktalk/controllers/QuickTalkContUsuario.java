@@ -30,6 +30,7 @@ public class QuickTalkContUsuario {
         return quickTalkRepUsuario.findAll();
     }
 
+
     @GetMapping("/{id}")
     QuickTalkUsuarios getUsuarioByID(@PathVariable int id) {
         Long longID = Long.valueOf(id);
@@ -60,6 +61,38 @@ public class QuickTalkContUsuario {
             return novoUsuario;
         } else {
             return null;
+        }
+    }
+
+
+    @PostMapping("/login")
+    QuickTalkUsuarios loginUsuario(@RequestBody LoginRequest loginRequest) {
+        QuickTalkUsuarios usuario = quickTalkRepUsuario.findByEmail(loginRequest.getEmail());
+        if (usuario != null && usuario.getSenha().equals(loginRequest.getSenha())) {
+            return usuario;
+        } else {
+            return null;
+        }
+    }
+
+    static class LoginRequest {
+        private String email;
+        private String senha;
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getSenha() {
+            return senha;
+        }
+
+        public void setSenha(String senha) {
+            this.senha = senha;
         }
     }
 
