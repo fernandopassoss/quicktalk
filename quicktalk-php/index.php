@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickTalk</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
+<?php include_once "head.php" ?>
 <body>
+<video class="video-background" autoplay muted loop>
+        <source src="QuickTalk.mp4" type="video/mp4">
+      </video>
     <div class="wrapper">
         <section class="form signup">
             <header>
@@ -42,7 +36,7 @@
                     <label for="" class="" id="">
                         Senha
                     </label>
-                    <input type="password" placeholder="Sua senha" required  name="password">
+                    <input type="text" name="password" placeholder="Sua senha">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field image">
@@ -54,7 +48,7 @@
             </form>
             <div class="link">
                 Já está cadastrado?
-                <a href="#">Faça seu login</a>
+                <a href="login.php">Faça seu login</a>
             </div>
         </section>
     </div>
