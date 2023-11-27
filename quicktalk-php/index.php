@@ -36,7 +36,7 @@
                     <label for="" class="" id="">
                         Senha
                     </label>
-                    <input type="text" name="password" placeholder="Sua senha">
+                    <input type="password" name="password" placeholder="Sua senha">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field image">
