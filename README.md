@@ -1,9 +1,5 @@
 # quicktalk
-
-Projeto 5 - Troca de Mensagens Instantâneas
-
-Marco I - Construção dos diagramas UML
-A descrição do projeto e os diagramas estão disponíveis em detalhes na Wiki do projeto.
-
-Marco II - Estruturação e normalização das tabelas no banco de dados
-O arquivo PDF com as tabelas, feitas no MYSQL, estão disponíveis no diretório /banco.
+Quicktalk se trata de um chat de mensagens instantâneas, se assemelhando com outros programas conhecidos, como o Whatsapp.
+O sistema foi desenvolvido utilizando PHP, HTML e CSS. Embora seja uma aplicação simples, houve um grau de complexidade
+e necessidade conhecimento sólido em PHP para desenvolvê-lo, visto que 
+existem outras linguagens e métodos mais modernos para construir a aplicação e o PHP é antigo.
